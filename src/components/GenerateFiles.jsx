@@ -24,7 +24,7 @@ function GenerateFiles() {
       }
 
       const response = await fetch(
-        `http://localhost:5300/generate?filename=${encodeURIComponent(
+        `https://genify.onrender.com/generate?filename=${encodeURIComponent(
           filename
         )}`,
         {
