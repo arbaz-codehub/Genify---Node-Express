@@ -24,7 +24,9 @@ function GenerateFiles() {
       }
 
       const response = await fetch(
-        `http://localhost:5300/?filename=${encodeURIComponent(filename)}`,
+        `http://localhost:5300/generate?filename=${encodeURIComponent(
+          filename
+        )}`,
         {
           method: "POST",
           headers: {

@@ -12,6 +12,7 @@ Currently, two official plugins are available:
 
 ![Genify](genify.png)
 
+
 The backend server provides a robust file generation and download API endpoint built with Express.js.
 
 ### POST /generate
