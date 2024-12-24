@@ -10,6 +10,8 @@ Currently, two official plugins are available:
 
 ## Backend API Documentation
 
+![Genify](genify.png)
+
 The backend server provides a robust file generation and download API endpoint built with Express.js.
 
 ### POST /generate
