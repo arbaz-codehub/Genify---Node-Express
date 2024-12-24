@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+.header {
+  background-color: rgba(28, 28, 32, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 20px rgba(100, 108, 255, 0.2);
+  margin: 0;
+  animation: headerFadeIn 0.5s ease-in-out;
+  position: relative;
+  z-index: 1000;
+}
+
+@keyframes headerFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  display: inline-block;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.logo h1 {
+  color: #8f94ff;
+  margin: 0;
+  font-size: 2.2rem;
+  font-family: "Righteous", cursive;
+  text-shadow: 2px 2px 4px rgba(100, 108, 255, 0.3);
+  background: linear-gradient(45deg, #646cff, #9f6eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: rgba(28, 28, 32, 0.95);
+    padding: 1rem;
+    gap: 1rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .menuOpen {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    animation: menuSlideDown 0.3s ease-in-out forwards;
+  }
+
+  @keyframes menuSlideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.navLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navLink:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #646cff, #9f6eff);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: #8f94ff;
+}
+
+.navLink:hover:after {
+  width: 100%;
+}
